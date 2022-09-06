@@ -48,7 +48,7 @@ def pregunta_02():
 
     """
     
-   import collections
+    import collections
 
     data = open('data.csv', 'r').readlines()
     data = [i.replace('\n', '') for i in data]
