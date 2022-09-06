@@ -57,8 +57,8 @@ def pregunta_02():
     diccionario = collections.Counter(punto2)
     dict1 = diccionario.items()
     for x, y in dict1:
-   
-    return (str(x) + ',' + str(y))
+        print(str(x) + ',' + str(y))
+    return ()
 
 
 def pregunta_03():
