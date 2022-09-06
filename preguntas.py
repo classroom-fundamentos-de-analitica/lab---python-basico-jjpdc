@@ -47,6 +47,17 @@ def pregunta_02():
     ]
 
     """
+    import collections
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    punto2 = [i[0] for i in data]
+    punto2.sort()
+    diccionario = collections.Counter(punto2)
+    dict1 = diccionario.items()
+    for x, y in dict1:
+      print(str(x) + ',' + str(y))
     return
 
 
