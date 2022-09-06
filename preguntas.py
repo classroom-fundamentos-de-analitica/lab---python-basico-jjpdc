@@ -21,7 +21,15 @@ def pregunta_01():
     214
 
     """
-    return
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    punto1 = 0;
+    for i in data:
+      punto1 += int(i[1])
+
+    return punto1
 
 
 def pregunta_02():
