@@ -58,7 +58,7 @@ def pregunta_02():
     dict1 = diccionario.items()
     for x, y in dict1:
         print(str(x) + ',' + str(y))
-    return 
+    
 
 
 def pregunta_03():
@@ -90,7 +90,7 @@ def pregunta_03():
             if (i in o):
                suma += int(o[1])
         print(str(i) + ',' + str(suma))
-    return
+    
 
 
 def pregunta_04():
