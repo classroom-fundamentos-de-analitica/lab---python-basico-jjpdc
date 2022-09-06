@@ -48,7 +48,7 @@ def pregunta_02():
 
     """
     
-    import collections
+   import collections
 
     data = open('data.csv', 'r').readlines()
     data = [i.replace('\n', '') for i in data]
@@ -60,9 +60,9 @@ def pregunta_02():
     dict1 = diccionario.items()
     resultados = []
     for x, y in dict1:
-        l=str(x)
+        l= '"' + str(x) + '"'
         numero=str(y)
-        resultados.append("("+'"'+l+'"'+','+numero+')')
+        resultados.append((x,y))
     print(resultados)
     return
 
