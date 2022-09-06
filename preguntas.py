@@ -58,7 +58,7 @@ def pregunta_02():
     dict1 = diccionario.items()
     for x, y in dict1:
         print(str(x) + ',' + str(y))
-    return ()
+    return 
 
 
 def pregunta_03():
@@ -76,6 +76,20 @@ def pregunta_03():
     ]
 
     """
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    p3 = [i[0] for i in data]
+    p3 = list(set(p3))
+    p3.sort()
+    p33 = [[i[0], i[1]] for i in data]
+    for i in p3:
+        suma = 0
+        for o in p33:
+            if (i in o):
+               suma += int(o[1])
+        print(str(i) + ',' + str(suma))
     return
 
 
