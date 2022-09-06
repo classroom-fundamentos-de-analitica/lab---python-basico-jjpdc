@@ -47,7 +47,9 @@ def pregunta_02():
     ]
 
     """
+    
     import collections
+
     data = open('data.csv', 'r').readlines()
     data = [i.replace('\n', '') for i in data]
     data = [i.split('\t') for i in data]
@@ -56,10 +58,13 @@ def pregunta_02():
     punto2.sort()
     diccionario = collections.Counter(punto2)
     dict1 = diccionario.items()
-    resultados=[]
+    resultados = []
     for x, y in dict1:
-        resultados.append(str(x) + ',' + str(y))
-    returt resultados
+        l=str(x)
+        numero=str(y)
+        resultados.append("("+'"'+l+'"'+','+numero+')')
+    print(resultados)
+    return
 
 
 def pregunta_03():
