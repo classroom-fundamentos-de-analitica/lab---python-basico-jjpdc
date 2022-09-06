@@ -56,9 +56,10 @@ def pregunta_02():
     punto2.sort()
     diccionario = collections.Counter(punto2)
     dict1 = diccionario.items()
+    resultados=[]
     for x, y in dict1:
-        print(str(x) + ',' + str(y))
-    
+        resultados.append(str(x) + ',' + str(y))
+    returt resultados
 
 
 def pregunta_03():
@@ -86,10 +87,11 @@ def pregunta_03():
     p33 = [[i[0], i[1]] for i in data]
     for i in p3:
         suma = 0
+        resultados=[]
         for o in p33:
             if (i in o):
                suma += int(o[1])
-        print(str(i) + ',' + str(suma))
+        resultados.append(str(i) + ',' + str(suma))
     
 
 
