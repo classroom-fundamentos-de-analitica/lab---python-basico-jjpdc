@@ -62,7 +62,7 @@ def pregunta_02():
     for x, y in dict1:
         l= '"' + str(x) + '"'
         numero=str(y)
-        resultados.append((x,y))
+        resultados.append(l)
     print(resultados)
     return
 
