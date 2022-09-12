@@ -195,7 +195,31 @@ def pregunta_06():
     ]
 
     """
-    return
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    columna5 = [i[4].split(',') for i in data]
+    punto6 = []
+    for i in columna5:
+      for o in i:
+        punto6.append(o.split(':'))
+    punto6
+    p6 = []
+    for i in punto6:
+      p6.append(i[0])
+    p6 = list(set(p6))
+    p6.sort()
+    resultado=[]
+    for i in p6:
+      lista = []
+      for o in punto6:
+        if (o[0] == i):
+          lista.append(o[1])
+      resultado.append((str(i) ,int(min(lista)),int(max(lista))))
+     return(resultado)
+
+    
 
 
 def pregunta_07():
