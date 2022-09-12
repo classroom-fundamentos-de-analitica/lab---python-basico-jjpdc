@@ -152,7 +152,25 @@ def pregunta_05():
     ]
 
     """
-    return
+   data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    p55 = [i[0] for i in data]
+    p55 = list(set(p55))
+    p55.sort()
+    p5 = [[i[0], i[1]] for i in data]
+    resultados=[]
+    for i in p55:
+      lista = []
+
+      for o in p5:
+          if (i in o):
+            lista.append(o[1])
+      resultados.append((i, int(max(lista)), int(min(lista))))
+
+    return resultados
+        
 
 
 def pregunta_06():
