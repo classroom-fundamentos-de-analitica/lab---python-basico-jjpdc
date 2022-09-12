@@ -69,7 +69,6 @@ def pregunta_03():
     """
     Retorne la suma de la columna 2 por cada letra de la primera columna como una lista
     de tuplas (letra, suma) ordendas alfabeticamente.
-
     Rta/
     [
         ("A", 53),
@@ -78,7 +77,6 @@ def pregunta_03():
         ("D", 31),
         ("E", 67),
     ]
-
     """
     data = open('data.csv', 'r').readlines()
     data = [i.replace('\n', '') for i in data]
@@ -88,15 +86,15 @@ def pregunta_03():
     p3 = list(set(p3))
     p3.sort()
     p33 = [[i[0], i[1]] for i in data]
+    resultados = []
     for i in p3:
         suma = 0
-        resultados=[]
         for o in p33:
             if (i in o):
                suma += int(o[1])
         resultados.append((str(i),suma))
-        
     return resultados
+
     
 
 
