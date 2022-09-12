@@ -217,7 +217,7 @@ def pregunta_06():
         if (o[0] == i):
           lista.append(o[1])
       resultado.append((str(i) ,int(min(lista)),int(max(lista))))
-     return(resultado)
+     return resultado
 
     
 
