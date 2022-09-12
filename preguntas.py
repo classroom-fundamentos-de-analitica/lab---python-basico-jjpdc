@@ -152,7 +152,7 @@ def pregunta_05():
     ]
 
     """
-   data = open('data.csv', 'r').readlines()
+    data = open('data.csv', 'r').readlines()
     data = [i.replace('\n', '') for i in data]
     data = [i.split('\t') for i in data]
     data
