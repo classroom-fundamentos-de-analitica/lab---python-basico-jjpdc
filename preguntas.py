@@ -120,7 +120,21 @@ def pregunta_04():
     ]
 
     """
-    return
+    import collections
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    p4 = [i[2].split('-')[1] for i in data]
+    p4.sort()
+    diccionario = collections.Counter(p4)
+    dict1 = diccionario.items()
+    resultados=[]
+    for x, y in dict1:
+        resultados.append((str(x),y))
+    
+    return resultados
+    
 
 
 def pregunta_05():
