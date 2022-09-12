@@ -94,7 +94,9 @@ def pregunta_03():
         for o in p33:
             if (i in o):
                suma += int(o[1])
-        resultados.append(str(i) + ',' + str(suma))
+        resultados.append((str(i),suma))
+        
+    return resultados
     
 
 
