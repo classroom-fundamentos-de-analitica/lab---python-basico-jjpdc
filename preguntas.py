@@ -60,8 +60,8 @@ def pregunta_02():
     for x, y in dict1:
         numero = str(y)
         resultados.append((x,y))
-    print(resultados)
-    return
+  
+    return  resultados
 
 
 
