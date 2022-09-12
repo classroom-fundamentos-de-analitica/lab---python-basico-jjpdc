@@ -171,30 +171,26 @@ def pregunta_05():
 
     return resultados
         
-
-
 def pregunta_06():
     """
-    La columna 5 codifica un diccionario donde cada cadena de tres letras corresponde a
-    una clave y el valor despues del caracter `:` corresponde al valor asociado a la
-    clave. Por cada clave, obtenga el valor asociado mas pequeño y el valor asociado mas
-    grande computados sobre todo el archivo.
-
-    Rta/
-    [
-        ("aaa", 1, 9),
-        ("bbb", 1, 9),
-        ("ccc", 1, 10),
-        ("ddd", 0, 9),
-        ("eee", 1, 7),
-        ("fff", 0, 9),
-        ("ggg", 3, 10),
-        ("hhh", 0, 9),
-        ("iii", 0, 9),
-        ("jjj", 5, 17),
-    ]
-
-    """
+  La columna 5 codifica un diccionario donde cada cadena de tres letras corresponde a
+  una clave y el valor despues del caracter `:` corresponde al valor asociado a la
+  clave. Por cada clave, obtenga el valor asociado mas pequeño y el valor asociado mas
+  grande computados sobre todo el archivo.
+  Rta/
+  [
+      ("aaa", 1, 9),
+      ("bbb", 1, 9),
+      ("ccc", 1, 10),
+      ("ddd", 0, 9),
+      ("eee", 1, 7),
+      ("fff", 0, 9),
+      ("ggg", 3, 10),
+      ("hhh", 0, 9),
+      ("iii", 0, 9),
+      ("jjj", 5, 17),
+  ]
+  """
     data = open('data.csv', 'r').readlines()
     data = [i.replace('\n', '') for i in data]
     data = [i.split('\t') for i in data]
@@ -202,25 +198,23 @@ def pregunta_06():
     columna5 = [i[4].split(',') for i in data]
     punto6 = []
     for i in columna5:
-      for o in i:
-        punto6.append(o.split(':'))
+        for o in i:
+            punto6.append(o.split(':'))
     punto6
     p6 = []
     for i in punto6:
-      p6.append(i[0])
+        p6.append(i[0])
     p6 = list(set(p6))
     p6.sort()
-    resultado=[]
+    resultado = []
     for i in p6:
-      lista = []
-      for o in punto6:
-        if (o[0] == i):
-          lista.append(o[1])
-      resultado.append((str(i) ,int(min(lista)),int(max(lista))))
+        lista = []
+        for o in punto6:
+            if (o[0] == i):
+                lista.append(o[1])
+        resultado.append((str(i), int(min(lista)), int(max(lista))))
+
     return resultado
-
-    
-
 
 def pregunta_07():
     """
