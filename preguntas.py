@@ -323,7 +323,16 @@ def pregunta_10():
 
 
     """
-    return
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    respuesta=[]
+    for i in data:
+      re=str(i[0]),len(i[3].split(',')),len(i[4].split(','))
+      respuesta.append(re)
+    return(respuesta)
+        
 
 
 def pregunta_11():
