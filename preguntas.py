@@ -408,5 +408,5 @@ def pregunta_12():
     respuesta={}
     for i in range(0, len(sumas)):
       respuesta[str(l[i])]=sumas[i]
-     return(respuesta)
+    return(respuesta)
    
