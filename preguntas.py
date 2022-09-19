@@ -285,7 +285,24 @@ def pregunta_09():
     }
 
     """
-    return
+    import collections
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    col5 = [i[4].split(',') for i in data]
+    punto6 = []
+    for i in col5:
+      for o in i:
+        punto6.append(o.split(':')[0])
+    punto6.sort()
+    diccionario = collections.Counter(punto6)
+    dict1 = diccionario.items()
+    respuesta = {}
+    for x, y in dict1:
+      respuesta[str(x)]=y
+    return(respuesta)
+        
 
 
 def pregunta_10():
