@@ -399,14 +399,17 @@ def pregunta_12():
     colum5 = [i[4].split(',') for i in data]
     l = [i[0] for i in data]
     sumas = []
-
+    respuesta={}
     for i in colum5:
       cont=0
       for o in i:
         cont += int(o.split(':')[1])
       sumas.append(cont)
-    respuesta={}
+
     for i in range(0, len(sumas)):
-      respuesta[str(l[i])]=sumas[i]
+      if(str(l[i]) in respuesta):
+        respuesta[str(l[i])]=respuesta[str(l[i])]+sumas[i]
+      else:
+        respuesta[str(l[i])]=sumas[i]
+
     return(respuesta)
-   
