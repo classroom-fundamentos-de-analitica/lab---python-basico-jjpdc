@@ -353,7 +353,28 @@ def pregunta_11():
 
 
     """
-    return
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    filas = [i[3].split(',') for i in data]
+    filas
+    letras= []
+    for i in filas:
+      for o in i:
+        letras.append(o)
+    letras = list(set(letras))
+    letras.sort()
+    p11 = [[i[1],i[3]]for i in data]
+    respuesta={}
+    for i in letras:
+      cont = 0
+      for o in p11:
+        if (i in o[1]):
+          cont += int(o[0])
+          respuesta[str(i)] =cont
+    return(respuesta)
+        
 
 
 def pregunta_12():
