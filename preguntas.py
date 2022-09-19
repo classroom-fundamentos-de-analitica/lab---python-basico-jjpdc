@@ -392,4 +392,21 @@ def pregunta_12():
     }
 
     """
-    return
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    colum5 = [i[4].split(',') for i in data]
+    l = [i[0] for i in data]
+    sumas = []
+
+    for i in colum5:
+      cont=0
+      for o in i:
+        cont += int(o.split(':')[1])
+      sumas.append(cont)
+    respuesta={}
+    for i in range(0, len(sumas)):
+      respuesta[str(l[i])]=sumas[i]
+     return(respuesta)
+   
