@@ -280,7 +280,27 @@ def pregunta_08():
     ]
 
     """
-    return
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    columna2 = [i[1] for i in data]
+    columna2 = list(set(columna2))
+    columna2.sort()
+    p7 = [[i[0], i[1]] for i in data]
+    respuesta = []
+    for i in columna2:
+      lista = []
+      for o in p7:
+        if (o[1] == i):
+          lista.append(o[0])
+
+      lista = list(set(lista))
+      lista.sort()
+      re = (int(str(i)), lista)
+      respuesta.append(re)
+    return(respuesta)
+    
 
 
 def pregunta_09():
