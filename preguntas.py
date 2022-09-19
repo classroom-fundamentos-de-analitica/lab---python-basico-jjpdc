@@ -211,7 +211,7 @@ def pregunta_06():
       lista = []
       for o in punto6:
         if (o[0] == i):
-          lista.append(o[1])
+          lista.append(int(o[1]))
       re=str(i),int(min(lista)),int(max(lista))
       respuesta.append(re)
     return(respuesta)
