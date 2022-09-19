@@ -237,7 +237,25 @@ def pregunta_07():
     ]
 
     """
-    return
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    columna2 = [i[1] for i in data]
+    columna2 = list(set(columna2))
+    columna2.sort()
+    p7 = [[i[0], i[1]] for i in data]
+    resuesta=[]
+    for i in columna2:
+      lista = []
+
+      for o in p7:
+        if (o[1] == i):
+          lista.append(o[0])
+      re=(int(str(i)),lista)
+      resuesta.append(re)
+    return(resuesta)
+    
 
 
 def pregunta_08():
