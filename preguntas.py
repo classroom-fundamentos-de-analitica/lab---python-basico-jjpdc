@@ -299,8 +299,9 @@ def pregunta_08():
       lista.sort()
       re = (int(str(i)), lista)
       respuesta.append(re)
-    return(respuesta)
-    
+    for i in respuesta:
+        print(i)
+    return 
 
 
 def pregunta_09():
