@@ -21,7 +21,15 @@ def pregunta_01():
     214
 
     """
-    return
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    punto1 = 0;
+    for i in data:
+      punto1 += int(i[1])
+
+    return punto1
 
 
 def pregunta_02():
@@ -39,14 +47,28 @@ def pregunta_02():
     ]
 
     """
-    return
+    import collections
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    punto2 = [i[0] for i in data]
+    punto2.sort()
+    diccionario = collections.Counter(punto2)
+    dict1 = diccionario.items()
+    resultados = []
+    for x, y in dict1:
+        numero = str(y)
+        resultados.append((x,y))
+  
+    return  resultados
+
 
 
 def pregunta_03():
     """
     Retorne la suma de la columna 2 por cada letra de la primera columna como una lista
     de tuplas (letra, suma) ordendas alfabeticamente.
-
     Rta/
     [
         ("A", 53),
@@ -55,9 +77,25 @@ def pregunta_03():
         ("D", 31),
         ("E", 67),
     ]
-
     """
-    return
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    p3 = [i[0] for i in data]
+    p3 = list(set(p3))
+    p3.sort()
+    p33 = [[i[0], i[1]] for i in data]
+    resultados = []
+    for i in p3:
+        suma = 0
+        for o in p33:
+            if (i in o):
+               suma += int(o[1])
+        resultados.append((str(i),suma))
+    return resultados
+
+    
 
 
 def pregunta_04():
@@ -82,7 +120,21 @@ def pregunta_04():
     ]
 
     """
-    return
+    import collections
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    p4 = [i[2].split('-')[1] for i in data]
+    p4.sort()
+    diccionario = collections.Counter(p4)
+    dict1 = diccionario.items()
+    resultados=[]
+    for x, y in dict1:
+        resultados.append((str(x),y))
+    
+    return resultados
+    
 
 
 def pregunta_05():
@@ -100,33 +152,69 @@ def pregunta_05():
     ]
 
     """
-    return
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    p55 = [i[0] for i in data]
+    p55 = list(set(p55))
+    p55.sort()
+    p5 = [[i[0], i[1]] for i in data]
+    resultados=[]
+    for i in p55:
+      lista = []
 
+      for o in p5:
+          if (i in o):
+            lista.append(o[1])
+      resultados.append((i, int(max(lista)), int(min(lista))))
 
+    return resultados
+        
 def pregunta_06():
     """
-    La columna 5 codifica un diccionario donde cada cadena de tres letras corresponde a
-    una clave y el valor despues del caracter `:` corresponde al valor asociado a la
-    clave. Por cada clave, obtenga el valor asociado mas pequeño y el valor asociado mas
-    grande computados sobre todo el archivo.
-
-    Rta/
-    [
-        ("aaa", 1, 9),
-        ("bbb", 1, 9),
-        ("ccc", 1, 10),
-        ("ddd", 0, 9),
-        ("eee", 1, 7),
-        ("fff", 0, 9),
-        ("ggg", 3, 10),
-        ("hhh", 0, 9),
-        ("iii", 0, 9),
-        ("jjj", 5, 17),
-    ]
-
-    """
-    return
-
+  La columna 5 codifica un diccionario donde cada cadena de tres letras corresponde a
+  una clave y el valor despues del caracter `:` corresponde al valor asociado a la
+  clave. Por cada clave, obtenga el valor asociado mas pequeño y el valor asociado mas
+  grande computados sobre todo el archivo.
+  Rta/
+  [
+      ("aaa", 1, 9),
+      ("bbb", 1, 9),
+      ("ccc", 1, 10),
+      ("ddd", 0, 9),
+      ("eee", 1, 7),
+      ("fff", 0, 9),
+      ("ggg", 3, 10),
+      ("hhh", 0, 9),
+      ("iii", 0, 9),
+      ("jjj", 5, 17),
+  ]
+  """
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    columna5 = [i[4].split(',') for i in data]
+    punto6 = []
+    for i in columna5:
+      for o in i:
+        punto6.append(o.split(':'))
+    punto6
+    p6 = []
+    for i in punto6:
+      p6.append(i[0])
+    p6 = list(set(p6))
+    p6.sort()
+    respuesta = []
+    for i in p6:
+      lista = []
+      for o in punto6:
+        if (o[0] == i):
+          lista.append(int(o[1]))
+      re=str(i),int(min(lista)),int(max(lista))
+      respuesta.append(re)
+    return(respuesta)
 
 def pregunta_07():
     """
@@ -149,7 +237,25 @@ def pregunta_07():
     ]
 
     """
-    return
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    columna2 = [i[1] for i in data]
+    columna2 = list(set(columna2))
+    columna2.sort()
+    p7 = [[i[0], i[1]] for i in data]
+    resuesta=[]
+    for i in columna2:
+      lista = []
+
+      for o in p7:
+        if (o[1] == i):
+          lista.append(o[0])
+      re=(int(str(i)),lista)
+      resuesta.append(re)
+    return(resuesta)
+    
 
 
 def pregunta_08():
@@ -174,7 +280,26 @@ def pregunta_08():
     ]
 
     """
-    return
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    columna2 = [i[1] for i in data]
+    columna2 = list(set(columna2))
+    columna2.sort()
+    p7 = [[i[0], i[1]] for i in data]
+    respuesta = []
+    for i in columna2:
+      lista = []
+      for o in p7:
+        if (o[1] == i):
+          lista.append(o[0])
+
+      lista = list(set(lista))
+      lista.sort()
+      re = (int(str(i)),lista)
+      respuesta.append(re)
+    return(respuesta)
 
 
 def pregunta_09():
@@ -197,7 +322,24 @@ def pregunta_09():
     }
 
     """
-    return
+    import collections
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    col5 = [i[4].split(',') for i in data]
+    punto6 = []
+    for i in col5:
+      for o in i:
+        punto6.append(o.split(':')[0])
+    punto6.sort()
+    diccionario = collections.Counter(punto6)
+    dict1 = diccionario.items()
+    respuesta = {}
+    for x, y in dict1:
+      respuesta[str(x)]=y
+    return(respuesta)
+        
 
 
 def pregunta_10():
@@ -218,7 +360,16 @@ def pregunta_10():
 
 
     """
-    return
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    respuesta=[]
+    for i in data:
+      re=str(i[0]),len(i[3].split(',')),len(i[4].split(','))
+      respuesta.append(re)
+    return(respuesta)
+        
 
 
 def pregunta_11():
@@ -239,7 +390,28 @@ def pregunta_11():
 
 
     """
-    return
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    filas = [i[3].split(',') for i in data]
+    filas
+    letras= []
+    for i in filas:
+      for o in i:
+        letras.append(o)
+    letras = list(set(letras))
+    letras.sort()
+    p11 = [[i[1],i[3]]for i in data]
+    respuesta={}
+    for i in letras:
+      cont = 0
+      for o in p11:
+        if (i in o[1]):
+          cont += int(o[0])
+          respuesta[str(i)] =cont
+    return(respuesta)
+        
 
 
 def pregunta_12():
@@ -257,4 +429,24 @@ def pregunta_12():
     }
 
     """
-    return
+    data = open('data.csv', 'r').readlines()
+    data = [i.replace('\n', '') for i in data]
+    data = [i.split('\t') for i in data]
+    data
+    colum5 = [i[4].split(',') for i in data]
+    l = [i[0] for i in data]
+    sumas = []
+    respuesta={}
+    for i in colum5:
+      cont=0
+      for o in i:
+        cont += int(o.split(':')[1])
+      sumas.append(cont)
+
+    for i in range(0, len(sumas)):
+      if(str(l[i]) in respuesta):
+        respuesta[str(l[i])]=respuesta[str(l[i])]+sumas[i]
+      else:
+        respuesta[str(l[i])]=sumas[i]
+
+    return(respuesta)
